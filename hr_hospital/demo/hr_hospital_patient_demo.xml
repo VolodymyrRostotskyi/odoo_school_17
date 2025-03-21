@@ -1,0 +1,36 @@
+<odoo>
+  <record id="hr_hospital_patient_1" model="hr.hospital.patient">
+    <field name="name">Lesya Ukrainka</field>
+    <field name="doctor_id" ref="hr_hospital_doctor_2"/>
+  </record>
+
+  <record id="hr_hospital_patient_2" model="hr.hospital.patient">
+    <field name="name">Ivan Franko</field>
+    <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+  </record>
+
+  <record id="hr_hospital_patient_3" model="hr.hospital.patient">
+    <field name="name">Taras Shevchenko</field>
+    <field name="doctor_id" ref="hr_hospital_doctor_3"/>
+  </record>
+
+  <record id="hr_hospital_patient_4" model="hr.hospital.patient">
+    <field name="name">Olha Kobylianska</field>
+    <field name="doctor_id" ref="hr_hospital_doctor_2"/>
+  </record>
+
+  <record id="hr_hospital_patient_5" model="hr.hospital.patient">
+    <field name="name">Mykhailo Hrushevskyi</field>
+    <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+  </record>
+
+  <record id="hr_hospital_patient_6" model="hr.hospital.patient">
+    <field name="name">Kateryna Bilokur</field>
+    <field name="doctor_id" ref="hr_hospital_doctor_3"/>
+  </record>
+
+  <record id="hr_hospital_patient_7" model="hr.hospital.patient">
+    <field name="name">Symon Petliura</field>
+    <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+  </record>
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+  <record id="hr_hospital_doctor_1" model="hr.hospital.doctor">
+    <field name="name">Mykola Pirogov</field>
+  </record>
+
+  <record id="hr_hospital_doctor_2" model="hr.hospital.doctor">
+    <field name="name">Mykola Amosov</field>
+  </record>
+
+  <record id="hr_hospital_doctor_3" model="hr.hospital.doctor">
+    <field name="name">Feofil Yanovskyi</field>
+  </record>
+</odoo>

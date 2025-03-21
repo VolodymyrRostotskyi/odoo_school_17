@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="hr_hospital_menu"
+              name="Hospital"
+              sequence="10"/>
+
+    <menuitem id="hr_hospital_menu_registry"
+              parent="hr_hospital_menu"
+              name="Registry"
+              sequence="20"/>
+
+    <menuitem id="hr_hospital_menu_reference"
+              parent="hr_hospital_menu"
+              name="Reference Data"
+              sequence="30"/>
+
+</odoo>
