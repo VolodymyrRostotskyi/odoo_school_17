@@ -3,8 +3,8 @@
         <field name="name">hr.hospital.disease.tree</field>
         <field name="model">hr.hospital.disease</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
+            <tree string="Diseases">
+                <field name="display_name"/>
             </tree>
         </field>
     </record>
@@ -17,6 +17,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="parent_id"/>
                     </group>
                 </sheet>
             </form>
@@ -28,6 +29,7 @@
         <field name="res_model">hr.hospital.disease</field>
         <field name="view_mode">tree,form</field>
     </record>
+
 
     <menuitem id="hr_hospital_menu_diseases"
               parent="hr_hospital_menu_reference"

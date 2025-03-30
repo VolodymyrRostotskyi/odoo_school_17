@@ -16,8 +16,23 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
-                        <field name="name"/>
+                    <group col="3">
+                        <group string="Personal Info">
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="gender"/>
+                        </group>
+                        <group string="Medical Role">
+                            <field name="specialty"/>
+                            <field name="is_intern"/>
+                            <field name="mentor_id"
+                                   invisible="not is_intern"/>
+                        </group>
+                        <group>
+                            <field name="photo" widget='image'
+                                   class="oe_avatar m-0"
+                                   options='{"zoom": true, "preview_image":"avatar_256"}'/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Patients">
@@ -27,15 +42,17 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Visits">
-                            <field name="visit_ids">
-                                <tree>
-                                    <field name="visit_date"/>
-                                    <field name="patient_id"/>
-                                    <field name="disease_id"/>
-                                </tree>
-                            </field>
-                        </page>
+<!--                        <page string="Visits">-->
+<!--                             <field name="visit_ids">-->
+<!--                                <tree>-->
+<!--                                    <field name="patient_id"/>-->
+<!--                                    <field name="doctor_id"/>-->
+<!--                                    <field name="scheduled_visit_datetime"/>-->
+<!--                                    <field name="status"/>-->
+<!--                                    <field name="actual_visit_datetime"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
                     </notebook>
                 </sheet>
             </form>
