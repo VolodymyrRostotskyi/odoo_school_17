@@ -1,3 +1,4 @@
+
 from odoo import models, fields, api
 
 
@@ -16,7 +17,6 @@ class HrHospitalDisease(models.Model):
     )
 
     complete_name = fields.Char(
-        string='Complete Name',
         compute='_compute_complete_name',
         recursive=True,
         store=True,
@@ -47,13 +47,14 @@ class HrHospitalDisease(models.Model):
         for rec in self:
             if rec.parent_id:
                 rec.complete_name = '%s / %s' % (
-                rec.parent_id.complete_name, rec.name)
+                    rec.parent_id.complete_name, rec.name)
             else:
                 rec.complete_name = rec.name
 
     @api.depends_context('hierarchical_naming')
     def _compute_display_name(self):
         if self.env.context.get('hierarchical_naming', True):
-            return super()._compute_display_name()
+            super()._compute_display_name()
+            return
         for record in self:
             record.display_name = record.name

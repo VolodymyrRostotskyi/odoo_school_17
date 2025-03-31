@@ -1,6 +1,7 @@
+
 from datetime import date
 
-from odoo import _, models, fields, api
+from odoo import models, fields, api
 
 
 class HrHospitalPatient(models.Model):
@@ -19,7 +20,6 @@ class HrHospitalPatient(models.Model):
     )
 
     age = fields.Integer(
-        string="Age",
         compute="_compute_age",
         store=True,
         readonly=True,
@@ -32,7 +32,6 @@ class HrHospitalPatient(models.Model):
     )
 
     passport_number = fields.Char(
-        string='Passport Number',
         help='National passport number',
     )
 
@@ -47,12 +46,10 @@ class HrHospitalPatient(models.Model):
     )
 
     emergency_contact_name = fields.Char(
-        string="Emergency Contact Name",
         help="Full name of the person to contact in case of emergency"
     )
 
     emergency_contact_phone = fields.Char(
-        string="Emergency Contact Phone",
         help="Phone number of the emergency contact person"
     )
 
@@ -68,8 +65,8 @@ class HrHospitalPatient(models.Model):
         for rec in self:
             if rec.birth_date:
                 rec.age = today.year - rec.birth_date.year - (
-                        (today.month, today.day) < (
-                    rec.birth_date.month, rec.birth_date.day)
+                    (today.month, today.day) < (
+                        rec.birth_date.month, rec.birth_date.day)
                 )
             else:
                 rec.age = 0

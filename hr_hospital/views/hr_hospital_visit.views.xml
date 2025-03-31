@@ -1,4 +1,5 @@
 <odoo>
+
     <record id="hr_hospital_visit_tree" model="ir.ui.view">
         <field name="name">hr.hospital.visit.tree</field>
         <field name="model">hr.hospital.visit</field>
@@ -58,4 +59,5 @@
               action="action_hr_hospital_visit"
               name="Visits"
               sequence="50"/>
+
 </odoo>

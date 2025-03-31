@@ -1,6 +1,7 @@
+
+from datetime import datetime, time
 from odoo import _, models, fields, api
 from odoo.exceptions import ValidationError
-from datetime import datetime, time
 
 
 class HrHospitalVisit(models.Model):
@@ -27,7 +28,6 @@ class HrHospitalVisit(models.Model):
             ('completed', 'Completed'),
             ('cancelled', 'Cancelled'),
         ],
-        string="Status",
         required=True,
         default='scheduled',
         help="Select the current status of the patient visit",

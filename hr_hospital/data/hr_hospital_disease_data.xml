@@ -1,4 +1,5 @@
 <odoo>
+
     <record id="hr_hospital_disease_covid" model="hr.hospital.disease">
         <field name="name">COVID-19</field>
     </record>
@@ -10,4 +11,5 @@
     <record id="hr_hospital_disease_measles" model="hr.hospital.disease">
         <field name="name">Measles</field>
     </record>
+
 </odoo>

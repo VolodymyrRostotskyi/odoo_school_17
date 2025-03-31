@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
     <menuitem id="hr_hospital_menu"
               name="Hospital"
               sequence="10"/>
 
-     <!-- Пацієнти / Лікарі -->
     <menuitem id="hr_hospital_menu_registry"
               name="Patients / Doctors"
               parent="hr_hospital_menu"

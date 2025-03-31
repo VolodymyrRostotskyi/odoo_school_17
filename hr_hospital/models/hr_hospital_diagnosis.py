@@ -1,3 +1,4 @@
+
 from odoo import _, models, fields, api
 from odoo.exceptions import ValidationError
 
@@ -90,4 +91,3 @@ class HrHospitalDiagnosis(models.Model):
                         "Interns must have mentor approval before diagnosis "
                         "can be marked as approved."
                     ))
-

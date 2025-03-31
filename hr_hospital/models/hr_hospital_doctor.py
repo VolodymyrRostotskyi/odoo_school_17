@@ -1,3 +1,4 @@
+
 from odoo import models, fields
 
 
@@ -14,13 +15,11 @@ class HrHospitalDoctor(models.Model):
             ('dermatologist', 'Dermatologist'),
             ('psychiatrist', 'Psychiatrist'),
         ],
-        string='Specialty',
         required=True,
         help="Medical specialty of the doctor",
     )
 
     is_intern = fields.Boolean(
-        string="Is Intern",
         help="Check this box if the doctor is currently an intern under"
              " supervision"
     )

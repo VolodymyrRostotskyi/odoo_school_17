@@ -28,7 +28,6 @@ class HrHospitalPersonMixin(models.AbstractModel):
             ('female', 'Female'),
             ('other', 'Other / Undefined')
         ],
-        string="Gender",
         required=True,
         default='other',
         help="Select the gender of the person",
