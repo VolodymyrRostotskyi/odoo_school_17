@@ -1,0 +1,48 @@
+<odoo>
+    <record id="hr_hospital_doctor_1" model="hr.hospital.doctor">
+        <field name="name">Mykola Pirogov</field>
+        <field name="phone">+380501112233</field>
+        <field name="gender">male</field>
+        <field name="specialty">gp</field>
+        <field name="is_intern">0</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_doctor_1-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_doctor_2" model="hr.hospital.doctor">
+        <field name="name">Mykola Amosov</field>
+        <field name="phone">+380631234567</field>
+        <field name="gender">male</field>
+        <field name="specialty">cardiologist</field>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="hr_hospital_doctor_1"/>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_doctor_2-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_doctor_3" model="hr.hospital.doctor">
+        <field name="name">Feofil Yanovskyi</field>
+        <field name="phone">+380671234999</field>
+        <field name="gender">male</field>
+        <field name="specialty">pediatrician</field>
+        <field name="is_intern">0</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_doctor_3-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_doctor_4" model="hr.hospital.doctor">
+        <field name="name">Olha Bohomolets</field>
+        <field name="phone">+380961112244</field>
+        <field name="gender">female</field>
+        <field name="specialty">dermatologist</field>
+        <field name="is_intern">0</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_doctor_4-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_doctor_5" model="hr.hospital.doctor">
+        <field name="name">Yuliia Voronina</field>
+        <field name="phone">+380931234555</field>
+        <field name="gender">female</field>
+        <field name="specialty">psychiatrist</field>
+        <field name="is_intern">1</field>
+        <field name="mentor_id" ref="hr_hospital_doctor_4"/>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_doctor_5-image.jpg"/>
+    </record>
+</odoo>

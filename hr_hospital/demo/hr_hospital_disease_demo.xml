@@ -1,0 +1,39 @@
+<odoo>
+    <record id="hr_hospital_disease_infectious" model="hr.hospital.disease">
+        <field name="name">Infectious Diseases</field>
+    </record>
+
+    <record id="hr_hospital_disease_neurological" model="hr.hospital.disease">
+        <field name="name">Neurological Disorders</field>
+    </record>
+
+    <record id="hr_hospital_disease_covid" model="hr.hospital.disease">
+        <field name="name">COVID-19</field>
+        <field name="parent_id" ref="hr_hospital_disease_infectious"/>
+    </record>
+
+    <record id="hr_hospital_disease_flu" model="hr.hospital.disease">
+        <field name="name">Influenza (Flu)</field>
+        <field name="parent_id" ref="hr_hospital_disease_infectious"/>
+    </record>
+
+    <record id="hr_hospital_disease_migraine" model="hr.hospital.disease">
+        <field name="name">Migraine</field>
+        <field name="parent_id" ref="hr_hospital_disease_neurological"/>
+    </record>
+
+    <record id="hr_hospital_disease_epilepsy" model="hr.hospital.disease">
+        <field name="name">Epilepsy</field>
+        <field name="parent_id" ref="hr_hospital_disease_neurological"/>
+    </record>
+
+    <record id="hr_hospital_disease_measles" model="hr.hospital.disease">
+        <field name="name">Measles</field>
+        <field name="parent_id" ref="hr_hospital_disease_infectious"/>
+    </record>
+
+    <record id="hr_hospital_disease_meningitis" model="hr.hospital.disease">
+        <field name="name">Meningitis</field>
+        <field name="parent_id" ref="hr_hospital_disease_neurological"/>
+    </record>
+</odoo>

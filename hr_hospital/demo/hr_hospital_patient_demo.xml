@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="hr_hospital_patient_1" model="hr.hospital.patient">
+        <field name="name">Lesya Ukrainka</field>
+        <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+        <field name="birth_date">1968-05-20</field>
+        <field name="phone">+38 (099) 300-24-89</field>
+        <field name="gender">female</field>
+        <field name="passport_number">XA451744</field>
+        <field name="passport_issue_date">2015-08-22</field>
+        <field name="passport_issuer">Vinnytsia</field>
+        <field name="tax_id_number">6602234500</field>
+        <field name="emergency_contact_name">Natalia Ponomarenko</field>
+        <field name="emergency_contact_phone">+38 062 791 25 60</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_patient_1-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_patient_2" model="hr.hospital.patient">
+        <field name="name">Ivan Franko</field>
+        <field name="doctor_id" ref="hr_hospital_doctor_2"/>
+        <field name="birth_date">1988-11-08</field>
+        <field name="phone">+38 067 017 20 09</field>
+        <field name="gender">male</field>
+        <field name="passport_number">my925185</field>
+        <field name="passport_issue_date">2015-05-28</field>
+        <field name="passport_issuer">Kyiv</field>
+        <field name="tax_id_number">7109795194</field>
+        <field name="emergency_contact_name">Mykola Artemenko</field>
+        <field name="emergency_contact_phone">064 183 06 75</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_patient_2-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_patient_3" model="hr.hospital.patient">
+        <field name="name">Taras Shevchenko</field>
+        <field name="doctor_id" ref="hr_hospital_doctor_3"/>
+        <field name="birth_date">1962-07-18</field>
+        <field name="phone">075 100-74-08</field>
+        <field name="gender">male</field>
+        <field name="passport_number">SH993318</field>
+        <field name="passport_issue_date">2008-01-17</field>
+        <field name="passport_issuer">Dnipropetrovsk</field>
+        <field name="tax_id_number">6841269611</field>
+        <field name="emergency_contact_name">Olga Kozlova</field>
+        <field name="emergency_contact_phone">+38 (011) 620-76-60</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_patient_3-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_patient_4" model="hr.hospital.patient">
+        <field name="name">Olha Kobylianska</field>
+        <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+        <field name="birth_date">1942-12-23</field>
+        <field name="phone">+38 054 151 15 05</field>
+        <field name="gender">female</field>
+        <field name="passport_number">Mj520351</field>
+        <field name="passport_issue_date">2011-08-15</field>
+        <field name="passport_issuer">Dnipropetrovsk</field>
+        <field name="tax_id_number">3031045093</field>
+        <field name="emergency_contact_name">Yuriy Shevchenko</field>
+        <field name="emergency_contact_phone">027 175 42 03</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_patient_4-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_patient_5" model="hr.hospital.patient">
+        <field name="name">Mykhailo Hrushevskyi</field>
+        <field name="doctor_id" ref="hr_hospital_doctor_2"/>
+        <field name="birth_date">1953-01-19</field>
+        <field name="phone">+38 057 448-52-91</field>
+        <field name="gender">male</field>
+        <field name="passport_number">ji189426</field>
+        <field name="passport_issue_date">2012-06-23</field>
+        <field name="passport_issuer">Odessa</field>
+        <field name="tax_id_number">3583324560</field>
+        <field name="emergency_contact_name">Olga Kozlova</field>
+        <field name="emergency_contact_phone">090 611 26 48</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_patient_5-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_patient_6" model="hr.hospital.patient">
+        <field name="name">Kateryna Bilokur</field>
+        <field name="doctor_id" ref="hr_hospital_doctor_3"/>
+        <field name="birth_date">1954-02-16</field>
+        <field name="phone">+38 (029) 645-13-75</field>
+        <field name="gender">female</field>
+        <field name="passport_number">Uu806606</field>
+        <field name="passport_issue_date">2012-01-21</field>
+        <field name="passport_issuer">Kyiv</field>
+        <field name="tax_id_number">7354712141</field>
+        <field name="emergency_contact_name">Natalia Ponomarenko</field>
+        <field name="emergency_contact_phone">076 266 23 75</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_patient_6-image.jpg"/>
+    </record>
+
+    <record id="hr_hospital_patient_7" model="hr.hospital.patient">
+        <field name="name">Symon Petliura</field>
+        <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+        <field name="birth_date">1957-02-07</field>
+        <field name="phone">057 173 40 79</field>
+        <field name="gender">male</field>
+        <field name="passport_number">IM703414</field>
+        <field name="passport_issue_date">2005-11-16</field>
+        <field name="passport_issuer">Zaporizhzhia</field>
+        <field name="tax_id_number">2671738640</field>
+        <field name="emergency_contact_name">Volodymyr Vasylenko</field>
+        <field name="emergency_contact_phone">400 46 89</field>
+        <field name="image_1920" type="base64" file="hr_hospital/static/img/hr_hospital_patient_7-image.jpg"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,27 @@
+<odoo>
+
+    <menuitem id="hr_hospital_menu"
+              name="Hospital"
+              sequence="10"/>
+
+    <menuitem id="hr_hospital_menu_registry"
+              name="Patients / Doctors"
+              parent="hr_hospital_menu"
+              sequence="10"/>
+
+    <menuitem id="hr_hospital_menu_visits"
+              name="Visits"
+              parent="hr_hospital_menu"
+              sequence="20"/>
+
+    <menuitem id="hr_hospital_menu_diagnoses"
+              name="Diagnoses"
+              parent="hr_hospital_menu"
+              sequence="30"/>
+
+    <menuitem id="hr_hospital_menu_reference"
+              parent="hr_hospital_menu"
+              name="Reference Data"
+              sequence="40"/>
+
+</odoo>

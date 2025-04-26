@@ -1,0 +1,112 @@
+<odoo>
+
+    <record id="hr_hospital_diagnosis_1" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_2"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_2"/>
+        <field name="mentor_id" ref="hr_hospital_doctor_1"/>
+        <field name="is_approved_by_mentor">1</field>
+        <field name="disease_id" ref="hr_hospital_disease_covid"/>
+        <field name="visit_id" ref="hr_hospital_visit_2"/>
+        <field name="description">Rest and herbal tea. Avoid cold poems.
+        </field>
+        <field name="is_approved">1</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_2" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_4"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+        <field name="disease_id" ref="hr_hospital_disease_flu"/>
+        <field name="visit_id" ref="hr_hospital_visit_4"/>
+        <field name="description">Prescribed quiet time and reading classics.
+        </field>
+        <field name="is_approved">1</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_3" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_6"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_3"/>
+        <field name="disease_id" ref="hr_hospital_disease_migraine"/>
+        <field name="visit_id" ref="hr_hospital_visit_6"/>
+        <field name="description">Stop painting sunflowers for one week.
+        </field>
+        <field name="is_approved">1</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_4" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_3"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_3"/>
+        <field name="disease_id" ref="hr_hospital_disease_flu"/>
+        <field name="visit_id" ref="hr_hospital_visit_3"/>
+        <field name="description">Cancelled due to illness. No diagnosis
+            performed.
+        </field>
+        <field name="is_approved">0</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_5" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_5"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_2"/>
+        <field name="mentor_id" ref="hr_hospital_doctor_1"/>
+        <field name="is_approved_by_mentor">1</field>
+        <field name="disease_id" ref="hr_hospital_disease_covid"/>
+        <field name="visit_id" ref="hr_hospital_visit_5"/>
+        <field name="description">Pending test results. Isolation advised.
+        </field>
+        <field name="is_approved">0</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_6" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_1"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+        <field name="disease_id" ref="hr_hospital_disease_migraine"/>
+        <field name="visit_id" ref="hr_hospital_visit_1"/>
+        <field name="description">Early diagnosis. Observe and track
+            symptoms.
+        </field>
+        <field name="is_approved">0</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_7" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_7"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_2"/>
+        <field name="disease_id" ref="hr_hospital_disease_flu"/>
+        <field name="visit_id" ref="hr_hospital_visit_7"/>
+        <field name="description">Signs of flu. Monitor condition for 48
+            hours.
+        </field>
+        <field name="is_approved">0</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_8" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_3"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+        <field name="disease_id" ref="hr_hospital_disease_migraine"/>
+        <field name="visit_id" ref="hr_hospital_visit_8"/>
+        <field name="description">Recurring headaches. Suggested lifestyle
+            changes.
+        </field>
+        <field name="is_approved">0</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_9" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_3"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_1"/>
+        <field name="disease_id" ref="hr_hospital_disease_flu"/>
+        <field name="visit_id" ref="hr_hospital_visit_8"/>
+        <field name="description">Secondary flu symptoms. Treat with care.
+        </field>
+        <field name="is_approved">0</field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_10" model="hr.hospital.diagnosis">
+        <field name="patient_id" ref="hr_hospital_patient_2"/>
+        <field name="doctor_id" ref="hr_hospital_doctor_3"/>
+        <field name="disease_id" ref="hr_hospital_disease_covid"/>
+        <field name="visit_id" ref="hr_hospital_visit_9"/>
+        <field name="description">Preventive check for exposure. No symptoms.
+        </field>
+        <field name="is_approved">0</field>
+    </record>
+
+
+</odoo>
