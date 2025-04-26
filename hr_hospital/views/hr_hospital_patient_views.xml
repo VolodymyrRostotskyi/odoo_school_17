@@ -1,0 +1,106 @@
+<odoo>
+
+    <record id="hr_hospital_patient_tree" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.tree (hr_hospital_patient)</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gender" widget="badge"/>
+                <field name="phone"/>
+                <field name="doctor_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_form" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.form (hr_hospital_patient)</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_create_visit"
+                            string="New Visit"
+                            type="object"
+                            icon="fa-plus"
+                            class="btn btn-primary"
+                            help="Create a new visit for this patient"/>
+                    <button name="action_open_patient_visits"
+                            string="Visit History"
+                            type="object"
+                            icon="fa-stethoscope"
+                            class="btn btn-light"
+                            help="Open a list of visits for this patient"/>
+                </header>
+                <sheet>
+                    <field name="image_1920" widget='image' class="oe_avatar"
+                           options='{"zoom": true, "preview_image": "avatar_128"}'/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group col="3">
+                        <group string="Personal Information">
+                            <field name="name"/>
+                            <field name="doctor_id"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="gender"/>
+                            <field name="birth_date"/>
+                            <field name="age"/>
+                        </group>
+                        <group>
+                            <separator string="Emergency Contact Information"/>
+                            <field name="emergency_contact_name"/>
+                            <field name="emergency_contact_phone" widget="phone"/>
+                            <separator string="Passport Details"/>
+                            <field name="tax_id_number"/>
+                            <field name="passport_number"/>
+                            <field name="passport_issuer"/>
+                            <field name="passport_issue_date"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Diagnoses">
+                            <field name="diagnosis_ids" string="Diagnosis">
+                                <tree>
+                                    <field name="doctor_id" widget="many2one_avatar_user"/>
+                                    <field name="disease_id"/>
+                                    <field name="is_approved"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_patient_search" model="ir.ui.view">
+        <field name="name">hr.hospital.patient.search (hr_hospital_patient)</field>
+        <field name="model">hr.hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="phone"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_hr_hospital_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="hr_hospital_menu_patients"
+              parent="hr_hospital_menu_registry"
+              action="action_hr_hospital_patient"
+              name="Patients"
+              sequence="50"/>
+
+</odoo>
