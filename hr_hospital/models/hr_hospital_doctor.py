@@ -31,6 +31,12 @@ class HrHospitalDoctor(models.Model):
         help="Mentor responsible for supervising the intern doctor",
     )
 
+    intern_ids = fields.One2many(
+        comodel_name='hr.hospital.doctor',
+        inverse_name='mentor_id',
+        string='Interns',
+        help='List of intern doctors supervised by this doctor'
+    )
     patient_ids = fields.One2many(
         comodel_name='hr.hospital.patient',
         inverse_name='doctor_id',

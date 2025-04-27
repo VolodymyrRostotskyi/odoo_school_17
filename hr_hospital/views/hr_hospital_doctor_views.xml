@@ -5,7 +5,6 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <tree>
-<!--                <field name="avatar_1920" widget="image" options="{'zoom': true,'size': [20, 20]}"/>-->
                 <field name="name"/>
             </tree>
         </field>
@@ -27,12 +26,13 @@
                     <group col="3">
                         <group string="Personal Info">
                             <field name="name"/>
-                            <field name="phone"/>
-                            <field name="gender"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="gender" widget="selection_badge"
+                                   options="{'size': 'sm'}"/>
                         </group>
                         <group string="Medical Role">
-                            <field name="specialty"/>
-                            <field name="is_intern"/>
+                            <field name="specialty" widget="badge"/>
+                            <field name="is_intern" widget="boolean_toggle"/>
                             <field name="mentor_id"
                                    invisible="not is_intern"/>
                         </group>
@@ -43,10 +43,88 @@
                         <page string="Patients">
                             <field name="patient_ids">
                                 <tree>
-                                    <field name="name"/>
+                                    <field name="image_1920" widget='image'
+                                           class="o_avatar"
+                                           options='{"zoom": "true"}'
+                                           nolabel="1"/>
+                                    <field name="name" string="Name"/>
+                                    <field name="gender" widget="badge"/>
+                                    <field name="phone" string="Phone"/>
+                                    <button name="action_open_patient_visits"
+                                            type="object"
+                                            icon="fa-stethoscope"
+                                            string="Visits"
+                                            class="btn btn-primary"
+                                            help="Open a list of visits for this patient"/>
                                 </tree>
                             </field>
                         </page>
+                        <page string="Interns" invisible="is_intern">
+                            <field name="intern_ids" >
+                                <kanban create="0" delete="0" >
+                                    <field name="name"/>
+                                    <field name="specialty"/>
+                                    <field name="image_128" />
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                             <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                                                 <t t-if="record.image_1024.raw_value">
+                                                     <field name="image_1024"
+                                                            class="o_kanban_image_fill_left d-block"
+                                                            preview_image="image_128"
+                                                            widget="background_image"
+                                                            options="{'zoom': true, 'zoom_delay': 1000}"/>
+                                                 </t>
+                                                 <t t-elif="record.image_128.raw_value">
+                                                     <field name="avatar_128"
+                                                            class="o_kanban_image_fill_left d-block"
+                                                            widget="background_image"
+                                                            options="{'zoom': true, 'zoom_delay': 1000}"/>
+                                                 </t>
+                                                 <div t-else=""
+                                                      class="o_kanban_image_fill_left d-flex align-items-center justify-content-center bg-100 bg-gradient">
+                                                     <svg class="w-75 h-75 opacity-50"
+                                                          viewBox="0 0 20 20"
+                                                          xmlns="http://www.w3.org/2000/svg">
+                                                         <g fill="currentColor">
+                                                             <path d="M 10 11 C 4.08 11 2 14 2 16 L 2 19 L 18 19 L 18 16 C 18 14 15.92 11 10 11 Z"/>
+                                                             <circle cx="10"
+                                                                     cy="5.5"
+                                                                     r="4.5"/>
+                                                         </g>
+                                                     </svg>
+                                                 </div>
+
+
+                                                 <div class="oe_kanban_details">
+                                                     <div class="o_kanban_record_top">
+                                                         <div class="o_kanban_record_headings">
+                                                             <strong class="o_kanban_record_title">
+                                                                 <field name="name"
+                                                                        placeholder="Intern`s Name"/>
+                                                             </strong>
+                                                             <span t-if="record.specialty.raw_value"
+                                                                   class="o_kanban_record_subtitle">
+                                                                 <field name="specialty"/>
+                                                             </span>
+                                                         </div>
+                                                     </div>
+                                                     <ul>
+                                                         <li t-if="record.phone.raw_value"
+                                                             class="o_force_ltr">
+                                                             <i class="fa fa-fw me-2 fa-phone text-primary"
+                                                                title="Phone"/>
+                                                             <field name="phone"/>
+                                                         </li>
+                                                     </ul>
+                                                 </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+
                     </notebook>
                 </sheet>
             </form>
