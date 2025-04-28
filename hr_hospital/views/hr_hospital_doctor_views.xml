@@ -5,7 +5,10 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="name" string="name"/>
+                <field name="specialty" widget="badge"/>
+                <field name="phone"/>
+                <field name="is_intern"/>
             </tree>
         </field>
     </record>
