@@ -1,5 +1,5 @@
 
-from odoo import models, fields
+from odoo import models, fields, _
 
 
 class HrHospitalDoctor(models.Model):
@@ -48,3 +48,16 @@ class HrHospitalDoctor(models.Model):
         inverse_name='doctor_id',
         string='Visits',
     )
+
+    def action_create_visit(self):
+        self.ensure_one()
+        return {
+            'name': _('New Visit'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'hr.hospital.visit',
+            'view_mode': 'form',
+            'target': 'current',
+            'context': {
+                'default_doctor_id': self.id,
+            }
+        }
