@@ -2,14 +2,17 @@
 
     <record id="hr_hospital_disease_covid" model="hr.hospital.disease">
         <field name="name">COVID-19</field>
+        <field name="type">infectious</field>
     </record>
 
     <record id="hr_hospital_disease_flu" model="hr.hospital.disease">
         <field name="name">Influenza</field>
+        <field name="type">infectious</field>
     </record>
 
     <record id="hr_hospital_disease_measles" model="hr.hospital.disease">
         <field name="name">Measles</field>
+        <field name="type">infectious</field>
     </record>
 
 </odoo>

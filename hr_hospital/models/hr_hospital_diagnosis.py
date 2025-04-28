@@ -91,3 +91,8 @@ class HrHospitalDiagnosis(models.Model):
                         "Interns must have mentor approval before diagnosis "
                         "can be marked as approved."
                     ))
+
+    @api.depends('patient_id','disease_id','doctor_id')
+    def _compute_display_name(self):
+        for record in self:
+            record.display_name = f"{record.patient_id.name} - {record.disease_id.name} (Dr.{record.doctor_id.name}) [{record.create_date.strftime('%d.%m.%Y')}]"
