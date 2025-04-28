@@ -56,6 +56,13 @@ class HrHospitalDiagnosis(models.Model):
         required=True,
     )
 
+    disease_type = fields.Selection(
+        related='disease_id.type',
+        string='Disease Type',
+        store=True,
+        readonly=True
+    )
+
     visit_id = fields.Many2one(
         comodel_name='hr.hospital.visit',
         string='Patient visits',
