@@ -131,11 +131,22 @@
         </field>
     </record>
 
+    <record id="hr_hospital_doctor_search" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.search (hr_hospital_doctor)</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search string="Search Doctors">
+                <field name="mentor_id" string="Mentors"  filter_domain="[('mentor_id.name', 'ilike', self)]"/>
+                <field name="intern_ids" string="Interns" filter_domain="[('intern_ids.name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
     <record id="action_hr_hospital_doctor" model="ir.actions.act_window">
         <field name="name">Doctors</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.hospital.doctor</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
 
     <menuitem id="hr_hospital_menu_doctors"
