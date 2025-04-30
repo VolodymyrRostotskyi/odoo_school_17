@@ -1,6 +1,6 @@
 <odoo>
 
-    <record id="hr_hospital_doctor_tree" model="ir.ui.view">
+    <record id="hr_hospital_doctor_view_tree" model="ir.ui.view">
         <field name="name">hr.hospital.doctor.tree (hr_hospital_doctor)</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="priority">10</field>
@@ -20,14 +20,16 @@
         </field>
     </record>
 
-    <record id="hr_hospital_doctor_form" model="ir.ui.view">
+    <record id="hr_hospital_doctor_view_form" model="ir.ui.view">
         <field name="name">hr.hospital.doctor.form</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <field name="image_1920" widget='image' class="oe_avatar"
-                           options='{"zoom": "true", "preview_image": "avatar_128"}'/>
+                    <field name="image_1920"
+                           widget="image"
+                           class="oe_avatar"
+                           options="{'zoom': 'true', 'preview_image': 'avatar_128'}"/>
                     <div class="oe_title">
                         <h1>
                             <field name="name" readonly="1"/>
@@ -37,14 +39,14 @@
                         <group string="Personal Info">
                             <field name="name"/>
                             <field name="phone" widget="phone"/>
-                            <field name="gender" widget="selection_badge"
+                            <field name="gender"
+                                   widget="selection_badge"
                                    options="{'size': 'sm'}"/>
                         </group>
                         <group string="Medical Role">
                             <field name="specialty" widget="badge"/>
                             <field name="is_intern" widget="boolean_toggle"/>
-                            <field name="mentor_id"
-                                   invisible="not is_intern"/>
+                            <field name="mentor_id" invisible="not is_intern"/>
                         </group>
                         <group>
                         </group>
@@ -53,9 +55,10 @@
                         <page string="Patients">
                             <field name="patient_ids">
                                 <tree>
-                                    <field name="image_1920" widget='image'
+                                    <field name="image_1920"
+                                           widget="image"
                                            class="o_avatar"
-                                           options='{"zoom": "true"}'
+                                           options="{'zoom': 'true'}"
                                            nolabel="1"/>
                                     <field name="name" string="Name"/>
                                     <field name="gender" widget="badge"/>
@@ -138,9 +141,8 @@
         </field>
     </record>
 
-    <record id="hr_hospital_doctor_kanban" model="ir.ui.view">
-        <field name="name">hr.hospital.doctor.kanban (hr_hospital_doctor)
-        </field>
+    <record id="hr_hospital_doctor_view_kanban" model="ir.ui.view">
+        <field name="name">hr.hospital.doctor.kanban (hr_hospital_doctor)</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="priority" eval="100"/>
         <field name="arch" type="xml">
@@ -150,6 +152,7 @@
                 <field name="name"/>
                 <field name="specialty"/>
                 <field name="is_intern"/>
+                <field name="image_1024"/>
                 <field name="image_128"/>
                 <templates>
                     <t t-name="kanban-box">
@@ -157,7 +160,7 @@
                             <t t-if="record.image_1024.raw_value">
                                 <field name="image_1024"
                                        class="o_kanban_image_fill_left d-block"
-                                       preview_image="image_128"
+                                       preview_image="avatar_128"
                                        widget="background_image"
                                        options="{'zoom': true, 'zoom_delay': 1000}"/>
                             </t>
@@ -185,8 +188,7 @@
                                     <div class="o_kanban_record_headings">
                                         <div class="d-flex align-items-center">
                                             <strong class="o_kanban_record_title me-2">
-                                                <field name="name"
-                                                       placeholder="Name"/>
+                                                <field name="name" placeholder="Name"/>
                                             </strong>
                                             <t t-if="record.is_intern.raw_value">
                                                 <div class="badge bg-primary text-white small rounded-pill">
@@ -203,8 +205,7 @@
                                 <ul>
                                     <li t-if="record.phone.raw_value"
                                         class="o_force_ltr">
-                                        <i class="fa fa-fw me-2 fa-phone text-primary"
-                                           title="Phone"/>
+                                        <i class="fa fa-fw me-2 fa-phone text-primary" title="Phone"/>
                                         <field name="phone"/>
                                     </li>
                                 </ul>
@@ -224,7 +225,7 @@
         </field>
     </record>
 
-    <record id="hr_hospital_doctor_search" model="ir.ui.view">
+    <record id="hr_hospital_doctor_view_search" model="ir.ui.view">
         <field name="name">hr.hospital.doctor.search (hr_hospital_doctor)</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
@@ -235,7 +236,7 @@
         </field>
     </record>
 
-    <record id="action_hr_hospital_doctor" model="ir.actions.act_window">
+    <record id="hr_hospital_doctor_action" model="ir.actions.act_window">
         <field name="name">Doctors</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.hospital.doctor</field>
@@ -244,7 +245,7 @@
 
     <menuitem id="hr_hospital_menu_doctors"
               parent="hr_hospital_menu_registry"
-              action="action_hr_hospital_doctor"
+              action="hr_hospital_doctor_action"
               name="Doctors"
               sequence="60"/>
 

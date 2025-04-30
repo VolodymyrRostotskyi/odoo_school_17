@@ -1,13 +1,14 @@
 <odoo>
 
-    <record id="hr_hospital_visit_tree" model="ir.ui.view">
+    <record id="hr_hospital_visit_view_tree" model="ir.ui.view">
         <field name="name">hr.hospital.visit.tree (hr_hospital_visit)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="patient_id" widget="many2one_avatar_user"/>
                 <field name="doctor_id" widget="many2one_avatar_user"/>
-                <field name="status" widget="badge"
+                <field name="status"
+                       widget="badge"
                        decoration-info="status == 'scheduled'"
                        decoration-success="status == 'completed'"
                        decoration-danger="status == 'cancelled'"/>
@@ -17,7 +18,7 @@
         </field>
     </record>
 
-    <record id="hr_hospital_visit_form" model="ir.ui.view">
+    <record id="hr_hospital_visit_view_form" model="ir.ui.view">
         <field name="name">hr.hospital.visit.form (hr_hospital_visit)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
@@ -79,9 +80,8 @@
         </field>
     </record>
 
-    <record id="hr_hospital_visit_calendar" model="ir.ui.view">
-        <field name="name">hr.hospital.visit.calendar (hr_hospital_visit)
-        </field>
+    <record id="hr_hospital_visit_view_calendar" model="ir.ui.view">
+        <field name="name">hr.hospital.visit.calendar (hr_hospital_visit)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="priority" eval="10"/>
         <field name="arch" type="xml">
@@ -96,26 +96,30 @@
         </field>
     </record>
 
-    <record id="hr_hospital_visit_search" model="ir.ui.view">
+    <record id="hr_hospital_visit_view_search" model="ir.ui.view">
         <field name="name">hr.hospital.visit.search (hr_hospital_visit)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <search string="Search Visits">
-                <filter name="status_scheduled" string="Scheduled"
+                <filter name="status_scheduled"
+                        string="Scheduled"
                         default_period="today"
                         domain="[('status','=','scheduled')]"/>
                 <filter name="filter_this_month"
-                    string="This Month"
-                    date="scheduled_visit_datetime"
-                    default_period="this_month"/>
-                <filter name="status_scheduled" string="Scheduled"
+                        string="This Month"
+                        date="scheduled_visit_datetime"
+                        default_period="this_month"/>
+                <filter name="status_scheduled"
+                        string="Scheduled"
                         default_period="today"
                         domain="[('status','=','scheduled')]"/>
                 <filter name="patient_id" string="Patient"/>
                 <group expand="0" string="Group By">
-                    <filter string="Status" name="status"
+                    <filter string="Status"
+                            name="status"
                             context="{'group_by':'status'}"/>
-                    <filter string="Doctor" name="doctor_id"
+                    <filter string="Doctor"
+                            name="doctor_id"
                             context="{'group_by':'doctor_id'}"/>
                 </group>
                 <searchpanel>
@@ -135,7 +139,7 @@
         </field>
     </record>
 
-    <record id="hr_hospital_visit_pivot" model="ir.ui.view">
+    <record id="hr_hospital_visit_view_pivot" model="ir.ui.view">
         <field name="name">hr.hospital.visit.pivot (hr_hospital_visit)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
@@ -147,7 +151,7 @@
         </field>
     </record>
 
-    <record id="action_hr_hospital_visit" model="ir.actions.act_window">
+    <record id="hr_hospital_visit_action" model="ir.actions.act_window">
         <field name="name">Visits</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.hospital.visit</field>
@@ -156,7 +160,7 @@
 
     <menuitem id="hr_hospital_menu_visit"
               parent="hr_hospital_menu_visits"
-              action="action_hr_hospital_visit"
+              action="hr_hospital_visit_action"
               name="Visits"
               sequence="50"/>
 
