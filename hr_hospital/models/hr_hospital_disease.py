@@ -25,7 +25,7 @@ class HrHospitalDisease(models.Model):
             ('genetic', 'Genetic Disorder'),
             ('autoimmune', 'Autoimmune Disease'),
             ('mental', 'Mental Health Disorder'),
-            ('other', 'Other') ,
+            ('other', 'Other'),
         ],
         string='Disease Type',
         required=True,

@@ -1,14 +1,15 @@
 {
 
     'name': 'Hospital Management',
-    'summary': 'Manage doctors, patients, diagnoses and visits in a hospital environment',
+    'summary': 'Manage doctors, patients, diagnoses and visits in a hospital'
+               ' environment',
     'author': 'Odoo School',
     'website': 'https://odoo.school/',
     'category': 'Customizations',
     'license': 'OPL-1',
     'version': '17.0.2.0.0',
     'application': True,
-    'images': [ ],
+    'images': [],
     'depends': [
         'base',
         'mail',

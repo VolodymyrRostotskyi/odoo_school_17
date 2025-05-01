@@ -99,7 +99,16 @@ class HrHospitalDiagnosis(models.Model):
                         "can be marked as approved."
                     ))
 
-    @api.depends('patient_id','disease_id','doctor_id')
+    @api.depends('patient_id', 'disease_id', 'doctor_id')
     def _compute_display_name(self):
         for record in self:
-            record.display_name = f"{record.patient_id.name} - {record.disease_id.name} (Dr.{record.doctor_id.name}) [{record.create_date.strftime('%d.%m.%Y')}]"
+            patient = record.patient_id.name or ''
+            disease = record.disease_id.name or ''
+            doctor = record.doctor_id.name or ''
+            date_str = record.create_date.strftime(
+                '%d.%m.%Y') if record.create_date else ''
+            record.display_name = (f"{patient} "
+                                   f"-"
+                                   f" {disease} "
+                                   f"(Dr.{doctor}) "
+                                   f"[{date_str}]")

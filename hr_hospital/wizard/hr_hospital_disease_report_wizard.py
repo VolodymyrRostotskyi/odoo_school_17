@@ -1,6 +1,6 @@
+from datetime import date, timedelta
 from odoo import models, fields, _, api
 from odoo.exceptions import ValidationError
-from datetime import date, timedelta
 
 
 class HrHospitalDiseaseReportWizard(models.TransientModel):
@@ -42,12 +42,12 @@ class HrHospitalDiseaseReportWizard(models.TransientModel):
                 ))
 
     @api.model
-    def default_get(self, fields):
-        res = super().default_get(fields)
+    def default_get(self, requested_fields):
+        res = super().default_get(requested_fields)
 
         today = date.today()
-        start_of_week = today - timedelta(days=today.weekday())  # понеділок
-        end_of_week = start_of_week + timedelta(days=6)  # неділя
+        start_of_week = today - timedelta(days=today.weekday())
+        end_of_week = start_of_week + timedelta(days=6)
 
         res['date_from'] = start_of_week
         res['date_to'] = end_of_week
@@ -57,15 +57,15 @@ class HrHospitalDiseaseReportWizard(models.TransientModel):
         self.ensure_one()
 
         domain = [
-            ('create_date','>=',self.date_from),
-            ('create_date','<=',self.date_to)
+            ('create_date', '>=', self.date_from),
+            ('create_date', '<=', self.date_to)
         ]
 
         if self.doctor_ids:
-            domain.append(('doctor_id','in',self.doctor_ids.ids))
+            domain.append(('doctor_id', 'in', self.doctor_ids.ids))
 
         if self.disease_ids:
-            domain.append(('disease_id','in',self.disease_ids.ids))
+            domain.append(('disease_id', 'in', self.disease_ids.ids))
 
         return {
             'name': _('Disease Report'),
@@ -75,4 +75,3 @@ class HrHospitalDiseaseReportWizard(models.TransientModel):
             'target': 'current',
             'domain': domain,
         }
-
