@@ -23,15 +23,15 @@
 
         'data/hr_hospital_disease_data.xml',
 
-        'wizard/hr_hospital_patient_wizard_views.xml',
-        'wizard/hr_hospital_disease_report_wizard_views.xml',
-
         'views/hr_hospital_menu.xml',
         'views/hr_hospital_patient_views.xml',
         'views/hr_hospital_doctor_views.xml',
         'views/hr_hospital_diagnosis_views.xml',
         'views/hr_hospital_disease_views.xml',
         'views/hr_hospital_visit_views.xml',
+
+        'wizard/hr_hospital_patient_wizard_views.xml',
+        'wizard/hr_hospital_disease_report_wizard_views.xml',
     ],
     'demo': [
         'demo/hr_hospital_doctor_demo.xml',
