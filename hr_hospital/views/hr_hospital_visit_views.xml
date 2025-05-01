@@ -1,7 +1,7 @@
 <odoo>
 
     <record id="hr_hospital_visit_view_tree" model="ir.ui.view">
-        <field name="name">hr.hospital.visit.tree (hr_hospital_visit)</field>
+        <field name="name">hr.hospital.visit.tree (hr_hospital)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <tree>
@@ -19,7 +19,7 @@
     </record>
 
     <record id="hr_hospital_visit_view_form" model="ir.ui.view">
-        <field name="name">hr.hospital.visit.form (hr_hospital_visit)</field>
+        <field name="name">hr.hospital.visit.form (hr_hospital)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <form string="Patient Visit">
@@ -81,7 +81,7 @@
     </record>
 
     <record id="hr_hospital_visit_view_calendar" model="ir.ui.view">
-        <field name="name">hr.hospital.visit.calendar (hr_hospital_visit)</field>
+        <field name="name">hr.hospital.visit.calendar (hr_hospital)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="priority" eval="10"/>
         <field name="arch" type="xml">
@@ -97,7 +97,7 @@
     </record>
 
     <record id="hr_hospital_visit_view_search" model="ir.ui.view">
-        <field name="name">hr.hospital.visit.search (hr_hospital_visit)</field>
+        <field name="name">hr.hospital.visit.search (hr_hospital)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <search string="Search Visits">
@@ -140,7 +140,7 @@
     </record>
 
     <record id="hr_hospital_visit_view_pivot" model="ir.ui.view">
-        <field name="name">hr.hospital.visit.pivot (hr_hospital_visit)</field>
+        <field name="name">hr.hospital.visit.pivot (hr_hospital)</field>
         <field name="model">hr.hospital.visit</field>
         <field name="arch" type="xml">
             <pivot>

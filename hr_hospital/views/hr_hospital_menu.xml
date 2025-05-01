@@ -19,9 +19,14 @@
               parent="hr_hospital_menu"
               sequence="30"/>
 
+    <menuitem id="hr_hospital_menu_reports"
+              name="Reports"
+              parent="hr_hospital_menu"
+              sequence="40"/>
+
     <menuitem id="hr_hospital_menu_reference"
               parent="hr_hospital_menu"
               name="Reference Data"
-              sequence="40"/>
+              sequence="50"/>
 
 </odoo>

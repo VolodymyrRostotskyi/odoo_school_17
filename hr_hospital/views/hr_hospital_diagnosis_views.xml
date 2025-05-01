@@ -1,11 +1,12 @@
 <odoo>
 
     <record id="hr_hospital_diagnosis_view_tree" model="ir.ui.view">
-        <field name="name">hr.hospital.diagnosis.tree (hr_hospital_diagnosis)</field>
+        <field name="name">hr.hospital.diagnosis.tree (hr_hospital)</field>
         <field name="model">hr.hospital.diagnosis</field>
         <field name="priority">1000</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="create_date" string="Date"/>
                 <field name="patient_id"/>
                 <field name="doctor_id"/>
                 <field name="disease_id"/>
@@ -15,7 +16,7 @@
     </record>
 
     <record id="hr_hospital_diagnosis_view_form" model="ir.ui.view">
-        <field name="name">hr.hospital.diagnosis.form (hr_hospital_diagnosis)</field>
+        <field name="name">hr.hospital.diagnosis.form (hr_hospital)</field>
         <field name="model">hr.hospital.diagnosis</field>
         <field name="arch" type="xml">
             <form>
@@ -45,7 +46,7 @@
     </record>
 
     <record id="hr_hospital_diagnosis_view_pivot" model="ir.ui.view">
-        <field name="name">hr.hospital.diagnosis.pivot (hr_hospital_diagnosis)</field>
+        <field name="name">hr.hospital.diagnosis.pivot (hr_hospital)</field>
         <field name="model">hr.hospital.diagnosis</field>
         <field name="priority">500</field>
         <field name="arch" type="xml">
