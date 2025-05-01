@@ -1,23 +1,26 @@
 <odoo>
 
-    <record id="view_hr_hospital_disease_tree" model="ir.ui.view">
-        <field name="name">hr.hospital.disease.tree</field>
+    <record id="hr_hospital_disease_view_tree" model="ir.ui.view">
+        <field name="name">hr.hospital.disease.tree (hr_hospital)</field>
         <field name="model">hr.hospital.disease</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="display_name"/>
+            <tree default_order="parent_path" default_group_by="parent_id">
+                <field name="display_name" string="Disease name"/>
+                <field name="type" string="Disease Type" widget="badge"/>
+                <field name="parent_id"/>
             </tree>
         </field>
     </record>
 
-    <record id="view_hr_hospital_disease_form" model="ir.ui.view">
-        <field name="name">hr.hospital.disease.form</field>
+    <record id="hr_hospital_disease_view_form" model="ir.ui.view">
+        <field name="name">hr.hospital.disease.form (hr_hospital)</field>
         <field name="model">hr.hospital.disease</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="type" string="Disease Type"/>
                         <field name="parent_id"/>
                     </group>
                 </sheet>
@@ -25,16 +28,27 @@
         </field>
     </record>
 
-    <record id="action_hr_hospital_disease" model="ir.actions.act_window">
-        <field name="name">Diseases</field>
-        <field name="res_model">hr.hospital.disease</field>
-        <field name="view_mode">tree,form</field>
+    <record id="hr_hospital_disease_view_search" model="ir.ui.view">
+        <field name="name">hr.hospital.disease.search (hr_hospital)</field>
+        <field name="model">hr.hospital.disease</field>
+        <field name="arch" type="xml">
+            <search>
+                <searchpanel>
+                    <field name="parent_id" select="one" hierarchize="1"/>
+                </searchpanel>
+            </search>
+        </field>
     </record>
 
+    <record id="hr_hospital_disease_action" model="ir.actions.act_window">
+        <field name="name">Diseases</field>
+        <field name="res_model">hr.hospital.disease</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
 
     <menuitem id="hr_hospital_menu_diseases"
               parent="hr_hospital_menu_reference"
-              action="action_hr_hospital_disease"
+              action="hr_hospital_disease_action"
               name="Diseases"
               sequence="10"/>
 

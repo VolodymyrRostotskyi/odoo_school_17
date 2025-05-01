@@ -1,5 +1,5 @@
 
-from odoo import models, fields
+from odoo import models, fields, _
 
 
 class HrHospitalDoctor(models.Model):
@@ -31,6 +31,12 @@ class HrHospitalDoctor(models.Model):
         help="Mentor responsible for supervising the intern doctor",
     )
 
+    intern_ids = fields.One2many(
+        comodel_name='hr.hospital.doctor',
+        inverse_name='mentor_id',
+        string='Interns',
+        help='List of intern doctors supervised by this doctor'
+    )
     patient_ids = fields.One2many(
         comodel_name='hr.hospital.patient',
         inverse_name='doctor_id',
@@ -42,3 +48,16 @@ class HrHospitalDoctor(models.Model):
         inverse_name='doctor_id',
         string='Visits',
     )
+
+    def action_create_visit(self):
+        self.ensure_one()
+        return {
+            'name': _('New Visit'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'hr.hospital.visit',
+            'view_mode': 'form',
+            'target': 'current',
+            'context': {
+                'default_doctor_id': self.id,
+            }
+        }

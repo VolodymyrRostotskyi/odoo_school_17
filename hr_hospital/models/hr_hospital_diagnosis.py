@@ -56,6 +56,13 @@ class HrHospitalDiagnosis(models.Model):
         required=True,
     )
 
+    disease_type = fields.Selection(
+        related='disease_id.type',
+        string='Disease Type',
+        store=True,
+        readonly=True
+    )
+
     visit_id = fields.Many2one(
         comodel_name='hr.hospital.visit',
         string='Patient visits',
@@ -91,3 +98,17 @@ class HrHospitalDiagnosis(models.Model):
                         "Interns must have mentor approval before diagnosis "
                         "can be marked as approved."
                     ))
+
+    @api.depends('patient_id', 'disease_id', 'doctor_id')
+    def _compute_display_name(self):
+        for record in self:
+            patient = record.patient_id.name or ''
+            disease = record.disease_id.name or ''
+            doctor = record.doctor_id.name or ''
+            date_str = record.create_date.strftime(
+                '%d.%m.%Y') if record.create_date else ''
+            record.display_name = (f"{patient} "
+                                   f"-"
+                                   f" {disease} "
+                                   f"(Dr.{doctor}) "
+                                   f"[{date_str}]")

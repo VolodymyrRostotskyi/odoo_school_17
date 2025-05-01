@@ -16,6 +16,22 @@ class HrHospitalDisease(models.Model):
         help="The name of the disease",
     )
 
+    type = fields.Selection(
+        selection=[
+            ('infectious', 'Infectious Disease'),
+            ('neurological', 'Neurological Disorder'),
+            ('cardiovascular', 'Cardiovascular Disease'),
+            ('oncological', 'Oncological Disease'),
+            ('genetic', 'Genetic Disorder'),
+            ('autoimmune', 'Autoimmune Disease'),
+            ('mental', 'Mental Health Disorder'),
+            ('other', 'Other'),
+        ],
+        string='Disease Type',
+        required=True,
+        help="Category or type of the disease."
+    )
+
     complete_name = fields.Char(
         compute='_compute_complete_name',
         recursive=True,
